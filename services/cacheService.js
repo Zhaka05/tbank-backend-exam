@@ -15,11 +15,13 @@ const fetchDataFromApi = async (id) => {
 };
 
 const getFromCache = (key) => cache.get(key);
+const set = (key, value) => cache.set(key, value);
 const clearCache = () => cache.clear();
 const setCacheSize = (size) => cache.setSize(size);
 
 module.exports = {
     getFromCache,
+    set,
     clearCache,
     setCacheSize,
     fetchDataFromApi,

@@ -27,6 +27,43 @@ const cacheController = require('../controllers/cacheController');
  */
 router.get('/data/:id', cacheController.getData);
 
+
+/**
+ * @openapi
+ * /data/{id}:
+ *   put:
+ *     summary: Update item in cache by ID
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: ID of the item to update in cache
+ *         schema:
+ *           type: string
+ *           example: 1
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               body:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: Cache updated successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *       '404':
+ *         description: Item not found in cache
+ */
+ router.put('/data/:id', cacheController.updateItem);
+
 /**
  * @openapi
  * /cache:

@@ -15,6 +15,21 @@ const getData = async (req, res) => {
     }
 };
 
+const updateItem = async (req, res) => {
+    const { id } = req.params;
+    const newItemData = req.body;
+
+    const cachedData = cacheService.getFromCache(id);
+
+    if (cachedData) {
+        const updatedItem = { ...cachedData, ...newItemData };
+        cacheService.set(id, updatedItem);
+        return res.json(updatedItem);
+    }
+
+    res.status(404).json({ error: 'Item not found in cache' });
+};
+
 const deleteCache = (req, res) => {
     cacheService.clearCache();
     res.sendStatus(200);
@@ -28,6 +43,7 @@ const putCacheSize = (req, res) => {
 
 module.exports = {
     getData,
+    updateItem,
     deleteCache,
     putCacheSize,
 };
