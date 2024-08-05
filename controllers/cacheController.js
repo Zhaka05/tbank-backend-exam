@@ -15,3 +15,19 @@ const getData = async (req, res) => {
     }
 };
 
+const deleteCache = (req, res) => {
+    cacheService.clearCache();
+    res.sendStatus(200);
+};
+
+const putCacheSize = (req, res) => {
+    const { size } = req.body;
+    cacheService.setCacheSize(size);
+    res.sendStatus(200);
+};
+
+module.exports = {
+    getData,
+    deleteCache,
+    putCacheSize,
+};
