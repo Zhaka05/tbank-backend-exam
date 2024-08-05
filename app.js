@@ -33,6 +33,8 @@ app.get('/', (req, res) => {
   res.send('<h1>Добро Пожаловать в мой API</h1><p>Use <a href="/docs">/docs</a> посмотреть документацию.</p>');
 });
 
+app.use('/api', cacheRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Сервер запущен на порту ${PORT}`);
