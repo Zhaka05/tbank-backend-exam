@@ -14,7 +14,7 @@ The server will start and listen on http://localhost:3000.
 ## API Endpoints
 
 __Welcome Page__
-- `GET / : Displays`: welcome message and a link to the API documentation.
+- `GET /`: Displays welcome message and a link to the API documentation.
 
 __Cache Operations__
 - `GET /api/items/{id}`: Retrieve item from cache by ID.
