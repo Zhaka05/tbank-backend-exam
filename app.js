@@ -2,6 +2,7 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const app = express();
+const cacheRoutes = require('./routes/cacheRoutes');
 const PORT = process.env.PORT || 3000;
 
 const options = {
