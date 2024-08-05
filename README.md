@@ -17,7 +17,7 @@ __Welcome Page__
 - `GET /`: Displays welcome message and a link to the API documentation.
 
 __Cache Operations__
-- `GET /api/items/{id}`: Retrieve item from cache by ID.
+- `GET /api/items/{id}`: Retrieve item from JSONPlaceholder API by ID.
 
 - `PUT /api/items/{id}`: Update an item in the cache by ID.
 
